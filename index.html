@@ -13,8 +13,8 @@
       --line: rgba(142, 241, 255, 0.16);
       --line-strong: rgba(142, 241, 255, 0.3);
       --text: #edf7fb;
-      --muted: #93a5b3;
-      --soft: #c7d4dd;
+      --muted: #a7b8c5;
+      --soft: #d5e1e9;
       --cyan: #52e3ff;
       --mint: #50f2b8;
       --amber: #ffc15a;
@@ -43,7 +43,7 @@
         radial-gradient(1100px 620px at 24% -10%, rgba(82, 227, 255, 0.18), transparent 58%),
         radial-gradient(900px 540px at 100% 8%, rgba(255, 193, 90, 0.12), transparent 56%),
         linear-gradient(145deg, #05070b 0%, #091017 46%, #0b0c12 100%);
-      background-size: 48px 48px, 48px 48px, auto, auto, auto;
+      background-size: 60px 60px, 60px 60px, auto, auto, auto;
       font-family: "Avenir Next", "SF Pro Text", "Segoe UI", "Noto Sans TC", sans-serif;
       letter-spacing: 0;
     }
@@ -62,7 +62,9 @@
           transparent 5px
         );
       mix-blend-mode: screen;
-      opacity: 0.5;
+      opacity: 0.16;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
       z-index: -1;
     }
 
@@ -129,7 +131,7 @@
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: 520px;
+      min-height: 460px;
       display: grid;
       align-items: end;
       border: 1px solid var(--line);
@@ -163,7 +165,7 @@
         linear-gradient(0deg, transparent 48%, rgba(82, 227, 255, 0.12) 48% 52%, transparent 52%);
       background-size: 54px 54px;
       transform: rotate(-12deg);
-      opacity: 0.42;
+      opacity: 0.3;
       mask-image: linear-gradient(90deg, transparent, #000 26%, #000 72%, transparent);
     }
 
@@ -211,12 +213,26 @@
       line-height: 1.7;
     }
 
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .hero-actions .btn {
+      min-height: 48px;
+      padding: 14px 18px;
+      font-size: 15px;
+    }
+
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
-      margin-top: 28px;
+      margin-top: 40px;
       max-width: 570px;
+      opacity: 0.82;
     }
 
     .stat {
@@ -248,10 +264,10 @@
 
     .section-head {
       display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 14px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 22px;
     }
 
     .section h2 {
@@ -262,11 +278,11 @@
     }
 
     .section-label {
-      color: var(--muted);
+      color: var(--cyan);
       font-size: 12px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.15em;
       white-space: nowrap;
     }
 
@@ -308,8 +324,8 @@
 
     .card-inner {
       display: grid;
-      grid-template-columns: 76px 1fr;
-      gap: 15px;
+      grid-template-columns: 1fr;
+      gap: 14px;
       padding: 16px;
     }
 
@@ -321,6 +337,12 @@
       border: 1px solid rgba(255, 255, 255, 0.18);
       box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32);
       background: #101722;
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .app-card:hover .icon {
+      transform: scale(1.035);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38);
     }
 
     .number-icon {
@@ -390,12 +412,12 @@
     }
 
     .features li {
-      padding: 7px 9px;
-      border: 1px solid rgba(255, 255, 255, 0.095);
-      border-radius: 999px;
-      color: #d7e6ee;
-      background: rgba(255, 255, 255, 0.045);
-      font-size: 12px;
+      padding: 6px 9px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 7px;
+      color: #cad9e2;
+      background: rgba(255, 255, 255, 0.035);
+      font-size: 11.5px;
       line-height: 1.1;
     }
 
@@ -407,28 +429,46 @@
     }
 
     .btn {
-      min-height: 42px;
+      min-height: 46px;
+      width: 100%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 11px 13px;
+      padding: 13px 16px;
       border-radius: var(--radius);
       border: 1px solid transparent;
       font-size: 14px;
       font-weight: 900;
       line-height: 1;
-      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, filter 180ms ease;
     }
 
     .btn:hover {
       transform: translateY(-1px);
     }
 
+    .btn:focus-visible {
+      outline: 2px solid var(--amber);
+      outline-offset: 3px;
+    }
+
     .btn.primary {
       color: #061017;
       background: linear-gradient(135deg, var(--cyan), var(--mint));
-      box-shadow: 0 12px 28px rgba(82, 227, 255, 0.2);
+      box-shadow: 0 12px 28px rgba(82, 227, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.36);
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+      box-shadow: 0 16px 34px rgba(82, 227, 255, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.36);
+    }
+
+    @media (min-width: 640px) {
+      .btn {
+        width: auto;
+      }
     }
 
     .btn.secondary {
@@ -445,6 +485,11 @@
     .arrow {
       font-size: 15px;
       transform: translateY(-1px);
+      transition: transform 160ms ease;
+    }
+
+    .btn:hover .arrow {
+      transform: translate(2px, -3px);
     }
 
     footer {
@@ -586,6 +631,10 @@
         <div class="eyebrow">Independent App Lab</div>
         <h1>jikker 作品集</h1>
         <p class="slogan">把反應力訓練、體感對戰與每日資訊摘要做成輕量、免費、開箱就能用的 App 體驗。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#reaction-games">查看免費 App</a>
+          <a class="btn secondary" href="#news-summary">看資訊摘要</a>
+        </div>
         <div class="hero-stats" aria-label="作品集摘要">
           <div class="stat">
             <strong>4</strong>
@@ -624,13 +673,13 @@
               </div>
               <p class="summary">把一張紙切成上百格填入亂序數字，電腦報數你比誰最快找到並點下去的競速找數字遊戲。</p>
               <ul class="features" aria-label="特色">
-                <li>1–25 到 1–100</li>
+                <li>四種難度（1–100）</li>
+                <li>連線對戰</li>
                 <li>精確計時</li>
                 <li>三條命</li>
                 <li>雲端排行榜</li>
                 <li>中英雙語</li>
                 <li>中文語音報數</li>
-                <li>雙指縮放</li>
               </ul>
               <div class="actions">
                 <a class="btn primary" href="https://apps.apple.com/tw/app/id6781130130" target="_blank" rel="noopener">App Store 下載 <span class="arrow">↗</span></a>
@@ -719,7 +768,6 @@
                 <li>每日更新精華</li>
                 <li>中英對照</li>
                 <li>重點分類</li>
-                <li>含廣告</li>
                 <li>免註冊</li>
                 <li>保護隱私</li>
                 <li>獨立新聞摘要</li>
