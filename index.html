@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kun Da WU 的 App 作品集</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07090d;
+      --panel: rgba(15, 21, 31, 0.74);
+      --panel-strong: rgba(21, 30, 43, 0.9);
+      --line: rgba(142, 241, 255, 0.16);
+      --line-strong: rgba(142, 241, 255, 0.3);
+      --text: #edf7fb;
+      --muted: #93a5b3;
+      --soft: #c7d4dd;
+      --cyan: #52e3ff;
+      --mint: #50f2b8;
+      --amber: #ffc15a;
+      --rose: #ff6f91;
+      --blue: #7aa7ff;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        linear-gradient(rgba(82, 227, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(82, 227, 255, 0.035) 1px, transparent 1px),
+        radial-gradient(1100px 620px at 24% -10%, rgba(82, 227, 255, 0.18), transparent 58%),
+        radial-gradient(900px 540px at 100% 8%, rgba(255, 193, 90, 0.12), transparent 56%),
+        linear-gradient(145deg, #05070b 0%, #091017 46%, #0b0c12 100%);
+      background-size: 48px 48px, 48px 48px, auto, auto, auto;
+      font-family: "Avenir Next", "SF Pro Text", "Segoe UI", "Noto Sans TC", sans-serif;
+      letter-spacing: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.018) 0,
+          rgba(255, 255, 255, 0.018) 1px,
+          transparent 1px,
+          transparent 5px
+        );
+      mix-blend-mode: screen;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: 18px 16px 38px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 0 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--soft);
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      color: var(--cyan);
+      background: linear-gradient(145deg, rgba(82, 227, 255, 0.15), rgba(255, 193, 90, 0.08));
+      box-shadow: 0 0 28px rgba(82, 227, 255, 0.13);
+      flex: 0 0 auto;
+    }
+
+    .free-pill {
+      flex: 0 0 auto;
+      padding: 9px 12px;
+      border: 1px solid rgba(80, 242, 184, 0.3);
+      border-radius: 999px;
+      color: #dcfff2;
+      background: rgba(80, 242, 184, 0.08);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      display: grid;
+      align-items: end;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background:
+        linear-gradient(115deg, rgba(6, 10, 16, 0.96) 0%, rgba(9, 17, 27, 0.86) 48%, rgba(7, 9, 13, 0.72) 100%),
+        linear-gradient(90deg, rgba(82, 227, 255, 0.2), rgba(255, 111, 145, 0.08), rgba(255, 193, 90, 0.14));
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      z-index: -1;
+      background:
+        linear-gradient(125deg, transparent 0 38%, rgba(82, 227, 255, 0.12) 38% 39%, transparent 39% 100%),
+        linear-gradient(155deg, transparent 0 63%, rgba(255, 193, 90, 0.1) 63% 64%, transparent 64% 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: 18px;
+      width: 440px;
+      height: 440px;
+      background:
+        linear-gradient(90deg, transparent 48%, rgba(82, 227, 255, 0.18) 48% 52%, transparent 52%),
+        linear-gradient(0deg, transparent 48%, rgba(82, 227, 255, 0.12) 48% 52%, transparent 52%);
+      background-size: 54px 54px;
+      transform: rotate(-12deg);
+      opacity: 0.42;
+      mask-image: linear-gradient(90deg, transparent, #000 26%, #000 72%, transparent);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 34px 20px 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 18px;
+      color: var(--mint);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+      box-shadow: 0 0 18px currentColor;
+    }
+
+    h1 {
+      max-width: 860px;
+      margin: 0;
+      font-family: "Copperplate", "Avenir Next", "Noto Sans TC", sans-serif;
+      font-size: clamp(42px, 12vw, 96px);
+      line-height: 0.92;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .slogan {
+      max-width: 700px;
+      margin: 18px 0 0;
+      color: var(--soft);
+      font-size: clamp(16px, 4.6vw, 22px);
+      line-height: 1.7;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 28px;
+      max-width: 570px;
+    }
+
+    .stat {
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.045);
+      backdrop-filter: blur(14px);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .section {
+      padding-top: 34px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(22px, 7vw, 34px);
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .section-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      white-space: nowrap;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .app-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
+        var(--panel);
+      box-shadow: 0 18px 58px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(18px);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .app-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      opacity: 0.9;
+    }
+
+    .app-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(82, 227, 255, 0.38);
+      background:
+        linear-gradient(145deg, rgba(82, 227, 255, 0.11), rgba(255, 193, 90, 0.045)),
+        var(--panel-strong);
+    }
+
+    .card-inner {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 15px;
+      padding: 16px;
+    }
+
+    .icon {
+      width: 76px;
+      height: 76px;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.32);
+      background: #101722;
+    }
+
+    .number-icon {
+      display: grid;
+      place-items: center;
+      font-family: "Copperplate", "Avenir Next", sans-serif;
+      font-size: 30px;
+      font-weight: 900;
+      color: #081016;
+      background:
+        linear-gradient(135deg, #52e3ff 0%, #50f2b8 44%, #ffc15a 100%);
+    }
+
+    .content {
+      min-width: 0;
+    }
+
+    .app-title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 7px;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .tag {
+      flex: 0 0 auto;
+      padding: 6px 8px;
+      border-radius: 999px;
+      color: #071015;
+      background: var(--cyan);
+      font-size: 11px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .tag.web {
+      background: var(--amber);
+    }
+
+    .tag.news {
+      background: var(--blue);
+      color: #071015;
+    }
+
+    .summary {
+      margin: 0;
+      color: var(--soft);
+      font-size: 14px;
+      line-height: 1.72;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .features li {
+      padding: 7px 9px;
+      border: 1px solid rgba(255, 255, 255, 0.095);
+      border-radius: 999px;
+      color: #d7e6ee;
+      background: rgba(255, 255, 255, 0.045);
+      font-size: 12px;
+      line-height: 1.1;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 13px;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn.primary {
+      color: #061017;
+      background: linear-gradient(135deg, var(--cyan), var(--mint));
+      box-shadow: 0 12px 28px rgba(82, 227, 255, 0.2);
+    }
+
+    .btn.secondary {
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .btn.secondary:hover {
+      border-color: rgba(255, 193, 90, 0.46);
+      box-shadow: 0 12px 28px rgba(255, 193, 90, 0.1);
+    }
+
+    .arrow {
+      font-size: 15px;
+      transform: translateY(-1px);
+    }
+
+    footer {
+      margin-top: 42px;
+      padding: 24px 0 8px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    footer strong {
+      color: var(--text);
+    }
+
+    @media (min-width: 640px) {
+      .page {
+        padding: 24px 22px 44px;
+      }
+
+      .hero-inner {
+        padding: 52px 40px 36px;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .card-inner {
+        grid-template-columns: 92px 1fr;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .icon {
+        width: 92px;
+        height: 92px;
+        border-radius: 22px;
+      }
+
+      .number-icon {
+        font-size: 38px;
+      }
+
+      .summary {
+        font-size: 15px;
+      }
+
+      footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .page {
+        padding-top: 30px;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+
+      .section {
+        padding-top: 48px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid.single {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .grid.single .app-card {
+        max-width: 760px;
+      }
+    }
+
+    @media (min-width: 1120px) {
+      .grid.games {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid.games .card-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .grid.games .icon {
+        width: 86px;
+        height: 86px;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero,
+      .app-card {
+        animation: rise 620ms ease both;
+      }
+
+      .section:nth-of-type(2) .app-card {
+        animation-delay: 80ms;
+      }
+
+      .section:nth-of-type(3) .app-card {
+        animation-delay: 140ms;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="頁面導覽">
+      <a class="brand" href="#top" aria-label="回到頂部">
+        <span class="brand-mark">KW</span>
+        <span>Kun Da WU Apps</span>
+      </a>
+      <span class="free-pill">全部免費</span>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="hero-inner">
+        <div class="eyebrow">Independent App Lab</div>
+        <h1>Kun Da WU 的 App 作品集</h1>
+        <p class="slogan">把反應力訓練、體感對戰與每日資訊摘要做成輕量、免費、開箱就能用的 App 體驗。</p>
+        <div class="hero-stats" aria-label="作品集摘要">
+          <div class="stat">
+            <strong>5</strong>
+            <span>已公開作品</span>
+          </div>
+          <div class="stat">
+            <strong>3</strong>
+            <span>主題分類</span>
+          </div>
+          <div class="stat">
+            <strong>$0</strong>
+            <span>全部免費</span>
+          </div>
+          <div class="stat">
+            <strong>Web</strong>
+            <span>部分支援免安裝</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" aria-labelledby="reaction-games">
+      <div class="section-head">
+        <h2 id="reaction-games">🎮 反應力小遊戲</h2>
+        <span class="section-label">Casual Puzzle</span>
+      </div>
+
+      <div class="grid games">
+        <article class="app-card">
+          <div class="card-inner">
+            <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/de/fd/00/defd001e-96f1-1caa-abaa-5f1cce33cc69/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" alt="數字獵人 Number Hunter 圖示">
+            <div class="content">
+              <div class="app-title-row">
+                <h3>數字獵人 Number Hunter</h3>
+                <span class="tag">iOS</span>
+              </div>
+              <p class="summary">把一張紙切成上百格填入亂序數字，電腦報數你比誰最快找到並點下去的競速找數字遊戲。</p>
+              <ul class="features" aria-label="特色">
+                <li>1–25 到 1–100</li>
+                <li>精確計時</li>
+                <li>三條命</li>
+                <li>雲端排行榜</li>
+                <li>中英雙語</li>
+                <li>中文語音報數</li>
+                <li>雙指縮放</li>
+              </ul>
+              <div class="actions">
+                <a class="btn primary" href="https://apps.apple.com/tw/app/id6781130130" target="_blank" rel="noopener">App Store 下載 <span class="arrow">↗</span></a>
+                <a class="btn secondary" href="https://jikker.github.io/number-hunter/" target="_blank" rel="noopener">網頁版立即玩 <span class="arrow">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="app-card">
+          <div class="card-inner">
+            <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/9d/45/10/9d4510aa-a8e4-74a9-e13a-561b3ff4a62d/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" alt="顏色獵人 Color Hunter 圖示">
+            <div class="content">
+              <div class="app-title-row">
+                <h3>顏色獵人 Color Hunter</h3>
+                <span class="tag">iOS</span>
+              </div>
+              <p class="summary">靈感來自史楚普效應：字的「顏色」故意跟寫的「字」不同，聽語音念色、忽略字義、點出正確顏色格子。</p>
+              <ul class="features" aria-label="特色">
+                <li>四種難度</li>
+                <li>即時計時</li>
+                <li>三條命</li>
+                <li>雲端排行榜</li>
+                <li>中英雙語</li>
+                <li>中文語音報色</li>
+                <li>反干擾訓練</li>
+              </ul>
+              <div class="actions">
+                <a class="btn primary" href="https://apps.apple.com/tw/app/id6781130341" target="_blank" rel="noopener">App Store 下載 <span class="arrow">↗</span></a>
+                <a class="btn secondary" href="https://jikker.github.io/color-hunter/" target="_blank" rel="noopener">網頁版立即玩 <span class="arrow">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="app-card">
+          <div class="card-inner">
+            <div class="icon number-icon" aria-hidden="true">67</div>
+            <div class="content">
+              <div class="app-title-row">
+                <h3>67 獵人 67 Hunter</h3>
+                <span class="tag web">Web</span>
+              </div>
+              <p class="summary">在滿是 66/76/77 誘餌的棋盤上，用最快速度找出唯一的「67」的反應遊戲。</p>
+              <ul class="features" aria-label="特色">
+                <li>免安裝網頁版</li>
+                <li>純前端單檔</li>
+                <li>多難度目標數</li>
+                <li>雲端排行榜</li>
+                <li>中英雙語</li>
+                <li>瀏覽器即開即玩</li>
+              </ul>
+              <div class="actions">
+                <a class="btn primary" href="https://jikker.github.io/67-hunter/" target="_blank" rel="noopener">立即遊玩 <span class="arrow">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="motion-3d">
+      <div class="section-head">
+        <h2 id="motion-3d">🌀 體感 3D 對戰</h2>
+        <span class="section-label">Motion Battle</span>
+      </div>
+
+      <div class="grid single">
+        <article class="app-card">
+          <div class="card-inner">
+            <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/96/cf/f1/96cff160-5ea7-48d7-5630-e16a7d232b2b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg" alt="爆甩陀螺王 Spin Rumble 圖示">
+            <div class="content">
+              <div class="app-title-row">
+                <h3>爆甩陀螺王 Spin Rumble</h3>
+                <span class="tag">iOS</span>
+              </div>
+              <p class="summary">甩動手機決勝負的 3D 陀螺對戰，甩得越猛轉速越高，陀螺在競技場橫掃對手。</p>
+              <ul class="features" aria-label="特色">
+                <li>真實甩動操控</li>
+                <li>3D 物理碰撞</li>
+                <li>段位階梯</li>
+                <li>改裝商店</li>
+                <li>四大排行榜</li>
+                <li>好友連結挑戰</li>
+              </ul>
+              <div class="actions">
+                <a class="btn primary" href="https://apps.apple.com/tw/app/id6782028453" target="_blank" rel="noopener">App Store 下載 <span class="arrow">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="news-summary">
+      <div class="section-head">
+        <h2 id="news-summary">📰 資訊摘要</h2>
+        <span class="section-label">Daily Brief</span>
+      </div>
+
+      <div class="grid single">
+        <article class="app-card">
+          <div class="card-inner">
+            <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a1/b3/28/a1b328b8-26d9-3468-4557-ab512c746113/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg" alt="MarsRadar 圖示">
+            <div class="content">
+              <div class="app-title-row">
+                <h3>MarsRadar</h3>
+                <span class="tag news">iOS</span>
+              </div>
+              <p class="summary">用乾淨的中英雙語每日摘要，兩分鐘看完 Tesla、SpaceX、xAI/Grok、X、Neuralink、The Boring Company 的最新動態。</p>
+              <ul class="features" aria-label="特色">
+                <li>每日更新精華</li>
+                <li>中英對照</li>
+                <li>重點分類</li>
+                <li>無廣告</li>
+                <li>免註冊</li>
+                <li>保護隱私</li>
+                <li>獨立新聞摘要</li>
+              </ul>
+              <div class="actions">
+                <a class="btn primary" href="https://apps.apple.com/tw/app/marsradar/id6782351314" target="_blank" rel="noopener">App Store 下載 <span class="arrow">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <div><strong>Kun Da WU</strong> © 2026 Independent Developer</div>
+      <div>全部 App 皆免費提供。</div>
+    </footer>
+  </main>
+</body>
+</html>
