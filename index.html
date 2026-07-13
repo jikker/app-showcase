@@ -454,6 +454,47 @@
       color: #071015;
     }
 
+    .tag.tool {
+      background: var(--mint);
+      color: #071015;
+    }
+
+    .tag.soon {
+      color: var(--soft);
+      background: var(--chip-bg);
+      border: 1px solid var(--chip-line);
+    }
+
+    .tag.price {
+      color: var(--amber);
+      background: rgba(255, 193, 90, 0.12);
+      border: 1px solid rgba(255, 193, 90, 0.42);
+    }
+
+    .icon-svg {
+      overflow: hidden;
+      padding: 0;
+      background: #0b1420;
+    }
+
+    .icon-svg svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .btn.coming {
+      color: var(--muted);
+      border-color: var(--secondary-line);
+      background: var(--secondary-bg);
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .btn.coming .arrow {
+      opacity: 0.5;
+    }
+
     .summary {
       margin: 0;
       color: var(--soft);
@@ -669,7 +710,7 @@
         <span class="brand-mark">JK</span>
         <span>jikker Apps</span>
       </a>
-      <span class="free-pill">全部免費</span>
+      <span class="free-pill">免費下載</span>
     </nav>
 
     <header class="hero" id="top">
@@ -678,7 +719,7 @@
         <h1>jikker 作品集</h1>
         <p class="slogan">一些我做的小 App：反應力遊戲、體感對戰，以及每天都用得到的資訊摘要</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#reaction-games">查看免費 App</a>
+          <a class="btn primary" href="#reaction-games">瀏覽 App 作品</a>
           <a class="btn secondary" href="#news-summary">看資訊摘要</a>
         </div>
         <div class="hero-stats" aria-label="作品集摘要">
@@ -687,12 +728,12 @@
             <span>已上架 App</span>
           </div>
           <div class="stat">
-            <strong>3</strong>
+            <strong>5</strong>
             <span>主題分類</span>
           </div>
           <div class="stat">
             <strong>$0</strong>
-            <span>全部免費</span>
+            <span>免費下載</span>
           </div>
           <div class="stat">
             <strong>iOS</strong>
@@ -716,6 +757,7 @@
               <div class="app-title-row">
                 <h3>數字獵人 Number Hunter</h3>
                 <span class="tag">iOS</span>
+                <span class="tag price">免費</span>
               </div>
               <p class="summary">把一張紙切成上百格填入亂序數字，電腦報數，比誰最快找到並點下去的競速找數字遊戲。全新即時多人連線對戰，和朋友遠端同場較勁、一較高下。</p>
               <ul class="features" aria-label="特色">
@@ -741,6 +783,7 @@
               <div class="app-title-row">
                 <h3>顏色獵人 Color Hunter</h3>
                 <span class="tag">iOS</span>
+                <span class="tag price">免費</span>
               </div>
               <p class="summary">靈感來自史楚普效應：字的「顏色」故意跟寫的「字」不同，聽語音念色、忽略字義、點出正確顏色格子。</p>
               <ul class="features" aria-label="特色">
@@ -775,6 +818,7 @@
               <div class="app-title-row">
                 <h3>爆甩陀螺王 Spin Rumble</h3>
                 <span class="tag">iOS</span>
+                <span class="tag price">免費</span>
               </div>
               <p class="summary">甩動手機決勝負的 3D 陀螺對戰，甩得越猛轉速越高，陀螺在競技場橫掃對手。</p>
               <ul class="features" aria-label="特色">
@@ -794,13 +838,49 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="action-defense">
+      <div class="section-head">
+        <h2 id="action-defense">🚀 動作塔防</h2>
+        <span class="section-label">Action Defense</span>
+      </div>
+
+      <div class="grid single">
+        <article class="app-card">
+          <div class="card-inner">
+            <img class="icon" src="steel-sky-1024.png" alt="鋼鐵蒼穹 Steel Sky 圖示">
+            <div class="content">
+              <div class="app-title-row">
+                <h3>鋼鐵蒼穹 Steel Sky</h3>
+                <span class="tag">iOS</span>
+                <span class="tag soon">即將上架</span>
+                <span class="tag price">免費・買斷去廣告</span>
+              </div>
+              <p class="summary">改造你的攔截飛彈、守護城市天空——來襲飛彈如潮水湧下，點擊發射攔截、直擊敵彈擊毀並回填彈匣，靠六線改造與三大主動技能扭轉戰局的爽感動作塔防。</p>
+              <ul class="features" aria-label="特色">
+                <li>六線改造系統</li>
+                <li>三大主動技能</li>
+                <li>制空狂熱爆發</li>
+                <li>防區闖關 10 波遞增</li>
+                <li>雲端排行榜</li>
+                <li>Google／Apple／訪客登入</li>
+                <li>免費遊玩・買斷移除廣告</li>
+              </ul>
+              <div class="actions">
+                <span class="btn coming" role="note">即將登陸 App Store <span class="arrow">↗</span></span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="news-summary">
       <div class="section-head">
         <h2 id="news-summary">📰 資訊摘要</h2>
         <span class="section-label">Daily Brief</span>
       </div>
 
-      <div class="grid single">
+      <div class="grid">
         <article class="app-card">
           <div class="card-inner">
             <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a1/b3/28/a1b328b8-26d9-3468-4557-ab512c746113/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg" alt="MarsRadar 圖示">
@@ -808,6 +888,7 @@
               <div class="app-title-row">
                 <h3>MarsRadar</h3>
                 <span class="tag news">iOS</span>
+                <span class="tag price">免費</span>
               </div>
               <p class="summary">用乾淨的中英雙語每日摘要，兩分鐘看完 Tesla、SpaceX、xAI/Grok、X、Neuralink、The Boring Company 的最新動態。</p>
               <ul class="features" aria-label="特色">
@@ -824,12 +905,76 @@
             </div>
           </div>
         </article>
+
+        <article class="app-card">
+          <div class="card-inner">
+            <span class="icon icon-svg" aria-label="前沿脈動 FrontierPulse 圖示" role="img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><defs><radialGradient id="fp-bg" cx="0.5" cy="0.42" r="0.95"><stop offset="0" stop-color="#16204a"/><stop offset="0.45" stop-color="#0e1430"/><stop offset="1" stop-color="#070a18"/></radialGradient><radialGradient id="fp-coreGlow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#37e0ff" stop-opacity="0.32"/><stop offset="0.62" stop-color="#37e0ff" stop-opacity="0.10"/><stop offset="1" stop-color="#37e0ff" stop-opacity="0"/></radialGradient><linearGradient id="fp-hexEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#59f2ff"/><stop offset="0.5" stop-color="#39a8ff"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient><linearGradient id="fp-hexFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101a3d"/><stop offset="1" stop-color="#1b1440"/></linearGradient></defs><rect width="1024" height="1024" fill="url(#fp-bg)"/><g stroke="#3f7dff" stroke-width="10" fill="none" opacity="0.30" stroke-linecap="round"><path d="M 70 240 L 70 110 L 220 110"/><path d="M 954 240 L 954 110 L 804 110"/><path d="M 70 784 L 70 914 L 220 914"/><path d="M 954 784 L 954 914 L 804 914"/></g><circle cx="512" cy="512" r="470" fill="url(#fp-coreGlow)"/><circle cx="512" cy="512" r="400" fill="none" stroke="#4a6bd8" stroke-width="6" stroke-dasharray="4 26" stroke-linecap="round" opacity="0.55"/><g stroke-linecap="round"><line x1="512" y1="244" x2="512" y2="112" stroke="#1aba9c" stroke-width="6" opacity="0.85"/><line x1="744.1" y1="378" x2="858.4" y2="312" stroke="#d97857" stroke-width="6" opacity="0.85"/><line x1="744.1" y1="646" x2="858.4" y2="712" stroke="#4285f4" stroke-width="6" opacity="0.85"/><line x1="512" y1="780" x2="512" y2="912" stroke="#8b5cf6" stroke-width="6" opacity="0.85"/><line x1="279.9" y1="646" x2="165.6" y2="712" stroke="#e8e8f0" stroke-width="6" opacity="0.85"/><line x1="279.9" y1="378" x2="165.6" y2="312" stroke="#fabf24" stroke-width="6" opacity="0.85"/></g><path d="M 512 244 L 744.1 378 L 744.1 646 L 512 780 L 279.9 646 L 279.9 378 Z" fill="url(#fp-hexFill)" stroke="url(#fp-hexEdge)" stroke-width="18" stroke-linejoin="round"/><path d="M 330 512 L 418 512 L 448 470 L 478 512 L 506 512 L 552 356 L 600 650 L 636 512 L 694 512" fill="none" stroke="#f4fbff" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/><circle cx="552" cy="356" r="34" fill="#59f2ff"/><g><circle cx="512" cy="112" r="34" fill="#1aba9c"/><circle cx="858.4" cy="312" r="34" fill="#d97857"/><circle cx="858.4" cy="712" r="34" fill="#4285f4"/><circle cx="512" cy="912" r="34" fill="#8b5cf6"/><circle cx="165.6" cy="712" r="34" fill="#e8e8f0"/><circle cx="165.6" cy="312" r="34" fill="#fabf24"/></g></svg></span>
+            <div class="content">
+              <div class="app-title-row">
+                <h3>前沿脈動 FrontierPulse</h3>
+                <span class="tag">iOS</span>
+                <span class="tag soon">即將上架</span>
+                <span class="tag price">訂閱制</span>
+              </div>
+              <p class="summary">只盯六大 AI 前沿實驗室（OpenAI、Anthropic、Google DeepMind、Meta AI、xAI、開源社群）的官方動態，中英雙語每日精華一分鐘讀完，另附「模型發布追蹤器」時間軸。</p>
+              <ul class="features" aria-label="特色">
+                <li>六實驗室每日脈動</li>
+                <li>中英雙語 brief</li>
+                <li>重要度 5 點標示</li>
+                <li>模型發布追蹤器</li>
+                <li>週報彙整</li>
+                <li>免註冊</li>
+                <li>免費 48h・Pro 訂閱制</li>
+                <li>獨立新聞摘要</li>
+              </ul>
+              <div class="actions">
+                <span class="btn coming" role="note">即將登陸 App Store <span class="arrow">↗</span></span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="productivity">
+      <div class="section-head">
+        <h2 id="productivity">🗂️ 效率工具</h2>
+        <span class="section-label">Productivity</span>
+      </div>
+
+      <div class="grid single">
+        <article class="app-card">
+          <div class="card-inner">
+            <span class="icon icon-svg" aria-label="收好 Kept 圖示" role="img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><defs><linearGradient id="kp-field" x1="112" y1="68" x2="916" y2="956" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#173B35"/><stop offset="0.54" stop-color="#102C28"/><stop offset="1" stop-color="#091C1A"/></linearGradient><radialGradient id="kp-light" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(372 294) rotate(48) scale(680)"><stop offset="0" stop-color="#5B8275" stop-opacity="0.22"/><stop offset="0.7" stop-color="#173B35" stop-opacity="0.04"/><stop offset="1" stop-color="#091C1A" stop-opacity="0"/></radialGradient></defs><rect width="1024" height="1024" fill="url(#kp-field)"/><rect width="1024" height="1024" fill="url(#kp-light)"/><path d="M552 282H412C334 282 282 342 282 422V602C282 682 334 742 412 742H552" fill="none" stroke="#F3F0E8" stroke-width="112" stroke-linecap="round" stroke-linejoin="round"/><path d="M472 282H612C690 282 742 342 742 422V602C742 682 690 742 612 742H472" fill="none" stroke="#78988A" stroke-width="112" stroke-linecap="round" stroke-linejoin="round"/><path d="M472 742H552" fill="none" stroke="#F3F0E8" stroke-width="112" stroke-linecap="round"/><circle cx="512" cy="512" r="31" fill="#0B211E" opacity="0.46"/><circle cx="512" cy="512" r="18" fill="#D28A5A"/></svg></span>
+            <div class="content">
+              <div class="app-title-row">
+                <h3>收好 Kept</h3>
+                <span class="tag">iOS</span>
+                <span class="tag soon">即將上架</span>
+                <span class="tag price">買斷制</span>
+              </div>
+              <p class="summary">由你掌控的私密剪貼簿——絕不在背景偷看，只在你主動貼上、分享或執行捷徑時收下文字與連結，存放前先在本機以 AES-256-GCM 加密，用 Face ID / Touch ID 上鎖。</p>
+              <ul class="features" aria-label="特色">
+                <li>本機加密（AES-256-GCM）</li>
+                <li>Face ID / Touch ID 上鎖</li>
+                <li>不在背景監看剪貼簿</li>
+                <li>資料夾 + 標籤整理</li>
+                <li>分享選單・捷徑收納</li>
+                <li>免帳號・無廣告・無追蹤</li>
+                <li>免費 20 則・Pro 買斷終身無上限</li>
+              </ul>
+              <div class="actions">
+                <span class="btn coming" role="note">即將登陸 App Store <span class="arrow">↗</span></span>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
     <footer>
       <div><strong>jikker</strong> © 2026 Independent Developer</div>
-      <div>全部 App 皆免費提供。</div>
+      <div>所有 App 免費下載；部分提供 Pro 訂閱或買斷解鎖。</div>
     </footer>
   </main>
 </body>
